@@ -15,11 +15,14 @@ const initialStore = {
 
 //reducer
 function reducer(state, action) {
-
+  if(action.type === 'DECREASE') {
+    return {count:state.count-1};
+  }
   return state;
 }
 
 const store = createStore(reducer, initialStore);
+store.dispatch({type:'DECREASE'})
 
 function App() {
   // cart setup
